@@ -84,20 +84,45 @@
     <!-- /.content-header -->
     <div class="container">
         <a href="/admin/posts/create" class="btn btn-primary"><i class="fas fa-plus"></i> Tambah Data</a>
+
+        <div class="card mt-3">
+          <div class="table-responsive">
+              <table class="table table-striped text-center">
+                  <thead>
+                    <tr>
+                      <th scope="row">No.</th>
+                      <th scope="col">judul</th>
+                      <th scope="col">Slug</th>
+                      <th scope="col">author</th>
+                      <th scope="col">kategori</th>
+                      <th scope="col">action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <?php foreach($posts as $i => $post): ?>
+                    <tr>
+                      <th scope="row"><?= $i + 1; ?></th>
+                      <td><?= $post['judul'] ?></td>
+                      <td><?= $post['slug'] ?></td>
+                      <td><?= $post['author'] ?></td>
+                      <td><?= $post['kategori'] ?></td>
+                      
+                      <td>
+                        <a href="/admin/posts/edit/<?= $post['slug']; ?>" class="btn btn-sm btn-warning me-1"><i class="fas fa-edit"></i>Edit</a>
+                        <a href="/admin/posts/delet/<?= $post['slug']; ?>" class="btn btn-sm btn-danger me-1"><i class="fas fa-trash"></i>Delete</a>
+                      </td>
+                    </tr>
+                    <?php endforeach; ?>
+                  </tbody>
+              </table>           
+          </div>
+        </div>
     </div>
     <!--bakal dirubah -->
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.1.0
-    </div>
-  </footer>
-
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
