@@ -46,6 +46,14 @@ $routes->get('/admin', 'Templating::index');
 $routes->get('/admin/posts', 'AdminPostsController::index');
 $routes->get('/admin/posts/create', 'AdminPostsController::create');
 $routes->post('/admin/posts/store', 'AdminPostsController::store');
+$routes->post('/admin/posts/updatedata', 'AdminPostsController::updatedata');
+$routes->post('/admin/posts/viewformedit', 'AdminPostsController::viewformedit');
+// $routes->post('/admin/posts/edit', 'AdminPostsController::validedit');
+
+
+
+
+
 
 $routes->get('/register', 'Templating::register');
 
